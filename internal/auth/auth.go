@@ -145,8 +145,8 @@ func (s *AuthService) ExchangeGithubCodeForJwt(code string) (JwtToken, error) {
 	}
 
 	return JwtToken{
-		token:    jwtToken,
-		expireAt: time.Now().Add(time.Duration(accessToken.ExpiresIn) * time.Second),
+		Token:    jwtToken,
+		ExpireAt: time.Now().Add(time.Duration(accessToken.ExpiresIn) * time.Second),
 	}, nil
 }
 

@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Login page</title>
+    </head>
+    <body>
+        <p>Well, hello there!</p>
+        <p>
+            Login
+            <a
+                href="/login"
+                >Login</a
+            >
+        </p>
+        <script>
+            async function sayHello() {
+                document.getElementById("response").innerText = "loading..."
+                const response = await fetch('/api/hello')
+                document.getElementById("response").innerText = `${response.status}: ${await response.text()}`
+            }
+
+        </script>
+        <button onclick="sayHello()">Who am I?</button>
+        <p id="response"></p>
+
+    </body>
+</html>
